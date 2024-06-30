@@ -19,11 +19,11 @@ const Dictionary = () => {
     e.preventDefault();
     const inputValue = input.current.value;
 
-    const result = data.find(
+    const foundItem = data.find(
       (item) => item.word.toLowerCase() === inputValue.toLowerCase()
     );
-    if (result) {
-      setResult(result.meaning);
+    if (foundItem) {
+      setResult(foundItem.meaning);
     } else {
       setResult("Word not found in the dictionary.");
     }
@@ -34,16 +34,10 @@ const Dictionary = () => {
       <div style={{ margin: "1rem", textAlign: "left" }}>
         <h1>Dictionary App</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="input"></label>
-          <input
-            name="input"
-            type="text"
-            ref={input}
-            placeholder="Search for a word..."
-          />
+          <input type="text" ref={input} placeholder="Search for a word..." />
           <button type="submit">Search</button>
-          <p style={{ fontWeight: "bold" }}>Definition:</p>
         </form>
+        <p style={{ fontWeight: "bold" }}>Definition:</p>
         <p>{result}</p>
       </div>
     </>
