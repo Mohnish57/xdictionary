@@ -25,7 +25,7 @@ const Dictionary = () => {
     if (result) {
       setResult(result.meaning);
     } else {
-      setResult("Word not found in the dictionary");
+      setResult("Word not found in the dictionary.");
     }
   };
 
@@ -35,7 +35,12 @@ const Dictionary = () => {
         <h1>Dictionary App</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="input"></label>
-          <input name="input" type="text" ref={input} />
+          <input
+            name="input"
+            type="text"
+            ref={input}
+            placeholder="Search for a word..."
+          />
           <button type="submit">Search</button>
           <p style={{ fontWeight: "bold" }}>Definition:</p>
         </form>
