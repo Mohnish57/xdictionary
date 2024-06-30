@@ -37,10 +37,8 @@ const Dictionary = () => {
           <label htmlFor="input"></label>
           <input name="input" type="text" ref={input} />
           <button type="submit">Search</button>
+          <p style={{ fontWeight: "bold" }}>Definition:</p>
         </form>
-        <p>
-          <b>Definition:</b>
-        </p>
         <p>{result}</p>
       </div>
     </>
